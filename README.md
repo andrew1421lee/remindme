@@ -32,6 +32,8 @@ for g in groupy.Group.list().filter(name__contains='me'):
 ## Android Companion App
 RemindMe comes with a barebones Android app that can generate csv files on the fly. It can also share the file using Android's robust share menu.
 
+It was made using MIT App Inventor
+
 ##TODO
 
 - Curfew settings - implement a way to restrict times where the bot can post
