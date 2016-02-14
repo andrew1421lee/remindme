@@ -9,8 +9,6 @@ minutes = strftime("%M")
 month = strftime("%m")
 day = strftime("%d")
 
-#hours = str("20")
-#minutes = str("00")
 sctime = int(hours)*60 + int(minutes)
 currtime = hours + ":" +minutes
 
