@@ -1,5 +1,4 @@
 # RemindMe
-Inspired by all those times the secretary of [*club name redacted*] forgot to remind people about upcoming events.
 
 RemindMe is a GroupMe bot that, once told a list of upcoming events, can remind everyone in a group chat about upcoming events. A server is also included that allows clients to update the csv file through the network. The default setting sends reminders for events in the following hour.
 
@@ -67,3 +66,14 @@ You can change where the bot posts by changing:
 ```python
 for g in groupy.Group.list().filter(name__contains='me'):
 ```
+
+You can change the time a reminder must be posted before the event by changing:
+```python
+if ctime > 54 and ctime < 111:
+```
+
+## Notes
+Inspired by all those times the secretary of [*club name redacted*] forgot to remind people about upcoming events.
+The secretary might be me.
+
+Made for HackBU 2016
