@@ -21,7 +21,8 @@ sctime = int(hours)*60 + int(minutes)
 currdate = month + "/" + day
 
 #Initialize return value (Message that will be posted)
-returnstring = ""
+#returnstring = ""
+eventlist = []
 
 #Sets active groupchat
 for g in groupy.Group.list().filter(name__contains='me'):
@@ -34,6 +35,8 @@ robot = groupy.Bot.create('RemindMe', chat)
 lines = [line.rstrip('\n') for line in open('events.csv')]
 
 eventcount = 0
+
+
 
 for i in lines:
     mystring =  i
@@ -48,10 +51,12 @@ for i in lines:
     #If the date matches, and the event is in the next hour period, add the message to returnstring
     if currdate == listevent[0]:
         if ctime > 54 and ctime < 111:
-            returnstring = returnstring + listevent[2] + ". "
+            eventlist.append(listevent[2])
+            #returnstring = returnstring + listevent[2] + ". "
             eventcount = eventcount + 1
+
 #if there is something to post, post it
-if returnstring != "":
+if len(eventlist) != 0:
     ihours = int(hours)
     if ihours < 12:
         robot.post("Good Morning! There are [" + str(eventcount) + "] event(s) in the next hour!")
@@ -59,5 +64,5 @@ if returnstring != "":
         robot.post("Good Afternoon! There are [" + str(eventcount) + "] event(s) in the next hour!")
     if ihours > 18:
         robot.post("Good Evening There are [" + str(eventcount) + "] event(s) in the next hour!")
-    print(returnstring)
-    robot.post(returnstring)
+    for s in eventlist:
+        robot.post(s)
