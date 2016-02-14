@@ -6,6 +6,8 @@ Requires Python3 and GroupyAPI
 
 Server only tested on Linux. Client also tested on Windows.
 
+The optimal way of using RemindMe is a 24/7 linux box running the server (like a raspberry pi) with a Windows laptop being able to update the events list.
+
 ## Setup the Server
 1. Make sure GroupyAPI is installed and .groupy.key file is made and in the correct place.
 
