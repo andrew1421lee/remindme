@@ -30,16 +30,9 @@ for g in groupy.Group.list().filter(name__contains='me'):
 ```
 
 ## Flexibility
-RemindMe uses a simple universal file that can be created in nearly any language.
-Just as a proof of concept, I included two examples:
+RemindMe csv files are extremely easy to create. Because the script will ignore old dates, you technically don't have to make a new file for a year!
 
-A barebones Android app that can update event files on the fly. It can share the file using Android's robust share menu. It was made using MIT App Inventor
-
-A barebones Windows GUI that can also update event files. It was made in Visual Basic. It won't work unless you have a file at exactly
-```
-C:\Users\andre\events\events.csv
-```
-Ayyylmao
+Included is an Android app that showcases how easy it would be to update the bot event list.
 
 ##TODO
 
