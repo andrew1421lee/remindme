@@ -3,6 +3,8 @@ This Python script checks a csv file in it's directory and posts reminders for e
 
 Requires Python3 and GroupyAPI
 
+Currently only tested on Linux.
+
 ## Setup
 1. Make sure GroupyAPI is installed and .groupy.key file is made.
 
