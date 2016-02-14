@@ -1,7 +1,7 @@
 # RemindMe
 Inspired by all those times the secretary of [*club name redacted*] forgot to remind people about upcoming events.
 
-This Python script checks a csv file in it's directory and posts reminders for every event in the file. A server is also included that allows clients to update the csv file through the network. The default setting sends reminders for events in the following hour.
+RemindMe is a GroupMe bot that, once told a list of upcoming events, can remind everyone in a group chat about upcoming events. A server is also included that allows clients to update the csv file through the network. The default setting sends reminders for events in the following hour.
 
 Requires Python3 and GroupyAPI
 
@@ -44,11 +44,14 @@ C:\Users\Username\Events
 2. The client script requires a events.csv file in the same directory. So copy the events.csv you made from before. Changes made to this csv file will be sent to the server when client.py is run (and server.py is listening).
 
 3. Edit client.py so that the IP address matches that of the server's.
-
+```python
+host = "localhost" #most likely not localhost
+port = 12345
+```
 4. Now just add your events to the events.csv and run client.py to send it to the Server.
 
 ###Optional showcase!
-EventFileWriter.exe is a simply Visual Basic program that provides a GUI for editing the events.csv file.
+EventFileWriter.exe is a simple Visual Basic program that provides a GUI for editing the events.csv file.
 Make sure events.csv exists and is formatted properly before launching.
 
 (psst, it works a charm under Wine. Don't tell Balmer)
