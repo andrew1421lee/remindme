@@ -2,7 +2,7 @@ import socket
 import sys
 
 s = socket.socket()
-s.connect(("localhost",9999))
+s.connect(("localhost",50000))
 f=open ("test.txt", "rb")
 l = f.read(1024)
 while (l):

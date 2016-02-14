@@ -1,7 +1,7 @@
 import socket
 import sys
 s = socket.socket()
-s.bind(("localhost",9999))
+s.bind(("localhost",50000))
 s.listen(10) # Acepta hasta 10 conexiones entrantes.
 
 while True:
