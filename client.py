@@ -1,8 +1,10 @@
 import socket
 import sys
 
+host = "localhost"
+port = 12345
 s = socket.socket()
-s.connect(("localhost",50000))
+s.connect((host,port))
 f=open ("events.csv", "rb")
 l = f.read(1024)
 while (l):

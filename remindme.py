@@ -38,14 +38,16 @@ eventcount = 0
 with open('events.csv', newline='') as f:
     reader = csv.reader(f)
     for row in reader:
-        etime = row[1].split(":")
-        setime = int(etime[0])*60 + int(etime[1])
-        ctime = setime - sctime
-        #print(ctime)
-        if currdate == row[0]:
-            if ctime > 54 and ctime < 111:
-                eventlist.append(row[2])
-                eventcount = eventcount +1
+        if row[0] != "Time":
+            etime = row[1].split(":")
+            setime = int(etime[0])*60 + int(etime[1])
+            ctime = setime - sctime
+            #print(ctime)
+            if currdate == row[0]:
+                if ctime > 54 and ctime < 111:
+                    eventlist.append(row[2])
+                    eventcount = eventcount +1
+                    print("Print")
             #print("derp")
             #print(eventlist)
 

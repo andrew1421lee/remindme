@@ -5,7 +5,7 @@ Requires Python3 and GroupyAPI
 
 Currently only tested on Linux.
 
-## Setup
+## Setup to Bot
 1. Make sure GroupyAPI is installed and .groupy.key file is made.
 
 2. Put the script somewhere safe.

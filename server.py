@@ -1,11 +1,13 @@
 import socket
 import sys
 s = socket.socket()
-s.bind(("localhost",50000))
+host = socket.gethostname()
+port = 12345
+s.bind((host,port))
 s.listen(10) # Acepta hasta 10 conexiones entrantes.
 
 while True:
-    print("Waiting for Connection")
+    print("Waiting for Connection on " + str(host) + str(port))
     sc, address = s.accept()
     print(str(address) + " connected!")
     f = open('buffer','wb') #open in binary
