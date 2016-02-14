@@ -46,8 +46,8 @@ with open('events.csv', newline='') as f:
             if ctime > 54 and ctime < 111:
                 eventlist.append(row[2])
                 eventcount = eventcount +1
-                #print("derp")
-                #print(eventlist)
+            #print("derp")
+            #print(eventlist)
 
 #if there is something to post, post it
 if len(eventlist) != 0:

@@ -1,30 +1,27 @@
-from os import curdir
-from os.path import join as pjoin
+import socket
+import sys
+s = socket.socket()
+s.bind(("localhost",9999))
+s.listen(10) # Acepta hasta 10 conexiones entrantes.
 
-from http.server import BaseHTTPRequestHandler, HTTPServer
+while True:
+    print("Waiting for Connection")
+    sc, address = s.accept()
+    print(str(address) + " connected!")
+    f = open('buffer','wb') #open in binary
+    print("Recieving Data")
+    l = sc.recv(1024)
+    while (l):
+        f.write(l)
+        l = sc.recv(1024)
+    f.close()
+    with open('buffer') as bh:
+        with open('events.csv', 'a') as fh:
+            print("Adding Event")
+            fh.write(bh.read())
+            #fh.write("\n")
+    print("Good bye")
 
-class StoreHandler(BaseHTTPRequestHandler):
-    store_path = pjoin(curdir, 'events.csv')
+sc.close()
 
-    def do_GET(self):
-        if self.path == '/events.csv':
-            with open(self.store_path) as fh:
-                self.send_response(200)
-                self.send_header('Content-type', 'text/csv')
-                self.end_headers()
-                self.wfile.write(fh.read().encode())
-
-    def do_POST(self):
-        if self.path == '/events.csv':
-            length = self.headers['content-length']
-            data = self.rfile.read(int(length))
-
-            with open(self.store_path, 'a') as fh:
-                fh.write(data.decode())
-                fh.write("\n")
-
-            self.send_response(200)
-
-
-server = HTTPServer(('', 8080), StoreHandler)
-server.serve_forever()
+s.close()
