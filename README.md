@@ -14,6 +14,8 @@ Server only tested on Linux. Client also tested on Windows.
 The 'events.csv' is formated like so:
 ```
 "DD/MM","HH:MM","Description"
+e.g
+"02/14","21:23","9:23pm Event"
 ```
 The first line (columns) is:
 ```
@@ -45,6 +47,8 @@ C:\Users\Username\Events
 ###Optional showcase!
 EventFileWriter.exe is a simply Visual Basic program that provides a GUI for editing the events.csv file.
 Make sure events.csv exists and is formatted properly before launching.
+
+(psst, it works a charm under Wine. Don't tell Balmer)
 
 ## Customization
 
