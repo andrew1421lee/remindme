@@ -53,10 +53,10 @@ with open('events.csv', newline='') as f:
 if len(eventlist) != 0:
     ihours = int(hours)
     if ihours < 12:
-        robot.post("Good Morning! There are [" + str(eventcount) + "] event(s) in the next hour!")
+        robot.post("Good Morning! There are [" + str(eventcount) + "] event(s) in the following!")
     if ihours > 12 and ihours < 18:
-        robot.post("Good Afternoon! There are [" + str(eventcount) + "] event(s) in the next hour!")
+        robot.post("Good Afternoon! There are [" + str(eventcount) + "] event(s) in the following hour!")
     if ihours > 18:
-        robot.post("Good Evening! There are [" + str(eventcount) + "] event(s) in the next hour!")
+        robot.post("Good Evening! There are [" + str(eventcount) + "] event(s) in the following hour!")
     for s in eventlist:
         robot.post(s)
