@@ -1,4 +1,6 @@
 # RemindMe
+Inspired by all those times the secretary of [club name redacted] forgot to remind people about upcoming events.
+
 This Python script checks a csv file in it's directory and posts reminders for every event in the file. A server is also included that allows clients to update the csv file through the network. The default setting sends reminders for events in the following hour.
 
 Requires Python3 and GroupyAPI
