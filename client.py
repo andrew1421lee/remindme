@@ -3,7 +3,7 @@ import sys
 
 s = socket.socket()
 s.connect(("localhost",50000))
-f=open ("test.txt", "rb")
+f=open ("events.csv", "rb")
 l = f.read(1024)
 while (l):
     s.send(l)
