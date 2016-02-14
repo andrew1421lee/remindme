@@ -8,7 +8,7 @@ Currently only tested on Linux.
 ## Setup
 1. Make sure GroupyAPI is installed and .groupy.key file is made.
 
-2. Put the script somewhere save.
+2. Put the script somewhere safe.
 
 3. Create a new 'events.csv' file in the same directory as the script.
 The 'events.csv' is formated like so:
