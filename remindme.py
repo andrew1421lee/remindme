@@ -38,7 +38,7 @@ eventcount = 0
 with open('events.csv', newline='') as f:
     reader = csv.reader(f)
     for row in reader:
-        if row[0] != "Time":
+        if row[0] != "Date":
             etime = row[1].split(":")
             setime = int(etime[0])*60 + int(etime[1])
             ctime = setime - sctime
@@ -47,7 +47,7 @@ with open('events.csv', newline='') as f:
                 if ctime > 54 and ctime < 111:
                     eventlist.append(row[2])
                     eventcount = eventcount +1
-                    print("Print")
+                    #print("Print")
             #print("derp")
             #print(eventlist)
 
