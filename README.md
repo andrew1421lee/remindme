@@ -1,21 +1,50 @@
 # RemindMe
-This Python script checks a csv file in it's directory and posts reminders for every event in the file.
+This Python script checks a csv file in it's directory and posts reminders for every event in the file. A server is also included that allows clients to update the csv file through the network. The default setting sends reminders for events in the following hour.
 
 Requires Python3 and GroupyAPI
 
-Currently only tested on Linux.
+Server only tested on Linux. Client also tested on Windows.
 
-## Setup to Bot
-1. Make sure GroupyAPI is installed and .groupy.key file is made.
+## Setup the Server
+1. Make sure GroupyAPI is installed and .groupy.key file is made and in the correct place.
 
-2. Put the script somewhere safe.
+2. Put the scripts somewhere safe. For this tutorial, we will be putting it in ~/events
 
 3. Create a new 'events.csv' file in the same directory as the script.
 The 'events.csv' is formated like so:
 ```
-"DD/MM","HH:MM","EVENT DESCRIPTION"
+"DD/MM","HH:MM","Description"
 ```
+The first line (columns) is:
+```
+"Date","Time","Description"
+```
+(make sure to make a new line after)
+
 4. Create a cron job to run the script every full hour.
+```bash
+0 * * * * /usr/bin/python3 /home/username/events/remindme.py
+```
+5. Run server.py
+
+The server only needs server.py up 24/7 if you want to be able to update the events csv from another computer. You can edit the csv from the server manually also.
+
+If you want to manually send a reminder, just run remindme.py.
+
+## Setup the Client
+1. On another computer, put the client.py script in a folder. For this tutorial it's in
+```
+C:\Users\Username\Events
+```
+2. The client script requires a events.csv file in the same directory. So copy the events.csv you made from before. Changes made to this csv file will be sent to the server when client.py is run (and server.py is listening).
+
+3. Edit client.py so that the IP address matches that of the server's.
+
+4. Now just add your events to the events.csv and run client.py to send it to the Server.
+
+###Optional showcase!
+EventFileWriter.exe is a simply Visual Basic program that provides a GUI for editing the events.csv file.
+Make sure events.csv exists and is formatted properly before launching.
 
 ## Customization
 
@@ -28,14 +57,3 @@ You can change where the bot posts by changing:
 ```python
 for g in groupy.Group.list().filter(name__contains='me'):
 ```
-
-## Flexibility
-RemindMe csv files are extremely easy to create. Because the script will ignore old dates, you technically don't have to make a new file for a year!
-
-Included is an Android app that showcases how easy it would be to update the bot event list.
-
-##TODO
-
-- Curfew settings - implement a way to restrict times where the bot can post
-
-- Ability to tag users for events
