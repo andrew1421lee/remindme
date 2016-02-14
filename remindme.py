@@ -1,5 +1,6 @@
 import groupy
 import os
+import csv
 from time import strftime
 
 #change working directory to directory of file so it can find events.csv
@@ -32,28 +33,21 @@ for g in groupy.Group.list().filter(name__contains='me'):
 robot = groupy.Bot.create('RemindMe', chat)
 
 #reads the file 'events.csv' and splits it into an array of lines
-lines = [line.rstrip('\n') for line in open('events.csv')]
-
+#lines = [line.rstrip('\n') for line in open('events.csv')]
 eventcount = 0
-
-
-
-for i in lines:
-    mystring =  i
-    #splits the string by '|'
-    listevent = mystring.split("|")
-    #get the time of the event
-    etime = listevent[1].split(":")
-    #Math magic from before
-    setime = int(etime[0])*60 + int(etime[1])
-    #time difference from event and current time
-    ctime = setime - sctime
-    #If the date matches, and the event is in the next hour period, add the message to returnstring
-    if currdate == listevent[0]:
-        if ctime > 54 and ctime < 111:
-            eventlist.append(listevent[2])
-            #returnstring = returnstring + listevent[2] + ". "
-            eventcount = eventcount + 1
+with open('events.csv', newline='') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        etime = row[1].split(":")
+        setime = int(etime[0])*60 + int(etime[1])
+        ctime = setime - sctime
+        print(ctime)
+        if currdate == row[0]:
+            if ctime > 54 and ctime < 111:
+                eventlist.append(row[2])
+                eventcount = eventcount +1
+                print("derp")
+                print(eventlist)
 
 #if there is something to post, post it
 if len(eventlist) != 0:
@@ -63,6 +57,6 @@ if len(eventlist) != 0:
     if ihours > 12 and ihours < 18:
         robot.post("Good Afternoon! There are [" + str(eventcount) + "] event(s) in the next hour!")
     if ihours > 18:
-        robot.post("Good Evening There are [" + str(eventcount) + "] event(s) in the next hour!")
+        robot.post("Good Evening! There are [" + str(eventcount) + "] event(s) in the next hour!")
     for s in eventlist:
         robot.post(s)
