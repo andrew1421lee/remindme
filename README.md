@@ -25,6 +25,7 @@ The first line (columns) is:
 
 4. Create a cron job to run the script every full hour.
 ```bash
+crontab -e
 0 * * * * /usr/bin/python3 /home/username/events/remindme.py
 ```
 5. Run server.py
