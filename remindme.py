@@ -23,9 +23,10 @@ currdate = month + "/" + day
 #Initialize return value (Message that will be posted)
 returnstring = ""
 
-#Initializes chat to equal the last group on the list
-#TODO make it so I can select the group by name
-chat = groupy.Group.list().last
+#Sets active groupchat
+for g in groupy.Group.list().filter(name__contains='me'):
+    chat = g
+    
 #Creates a new bot robot with the name 'RemindMe' in the group 'chat'
 robot = groupy.Bot.create('RemindMe', chat)
 
