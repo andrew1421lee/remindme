@@ -35,7 +35,10 @@ Just as a proof of concept, I included two examples:
 
 A barebones Android app that can update event files on the fly. It can share the file using Android's robust share menu. It was made using MIT App Inventor
 
-A barebones Windows GUI that can also update event files. It was made in Visual Basic
+A barebones Windows GUI that can also update event files. It was made in Visual Basic. It won't work unless you have a file at exactly
+```
+C:\Users\andre\events\events.csv
+```
 
 ##TODO
 
