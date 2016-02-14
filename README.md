@@ -29,10 +29,13 @@ You can change where the bot posts by changing:
 for g in groupy.Group.list().filter(name__contains='me'):
 ```
 
-## Android Companion App
-RemindMe comes with a barebones Android app that can generate csv files on the fly. It can also share the file using Android's robust share menu.
+## Flexibility
+RemindMe uses a simple universal file that can be created in nearly any language.
+Just as a proof of concept, I included two examples:
 
-It was made using MIT App Inventor
+A barebones Android app that can update event files on the fly. It can share the file using Android's robust share menu. It was made using MIT App Inventor
+
+A barebones Windows GUI that can also update event files. It was made in Visual Basic
 
 ##TODO
 
