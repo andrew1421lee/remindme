@@ -10,14 +10,14 @@ Requires Python3 and GroupyAPI
 
 3. Create a new 'events.csv' file in the same directory as the script.
 The 'events.csv' is formated like so:
-''''
+```
 "DD/MM","HH:MM","EVENT DESCRIPTION"
-''''
+```
 4. Create a cron job to run the script every full hour.
 
 ## Customization
 
 You can change the name of the ReminderBot by changing:
-'''python
+```python
 robot = groupy.Bot.create('RemindMe', chat)
-'''
+```
