@@ -21,3 +21,8 @@ You can change the name of the ReminderBot by changing:
 ```python
 robot = groupy.Bot.create('RemindMe', chat)
 ```
+
+You can change where the bot posts by changing:
+```python
+for g in groupy.Group.list().filter(name__contains='me'):
+```
