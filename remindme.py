@@ -41,13 +41,13 @@ with open('events.csv', newline='') as f:
         etime = row[1].split(":")
         setime = int(etime[0])*60 + int(etime[1])
         ctime = setime - sctime
-        print(ctime)
+        #print(ctime)
         if currdate == row[0]:
             if ctime > 54 and ctime < 111:
                 eventlist.append(row[2])
                 eventcount = eventcount +1
-                print("derp")
-                print(eventlist)
+                #print("derp")
+                #print(eventlist)
 
 #if there is something to post, post it
 if len(eventlist) != 0:
