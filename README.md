@@ -13,6 +13,8 @@ The optimal way of using RemindMe is a 24/7 linux box running the server (like a
 
 2. Put the scripts somewhere safe. For this tutorial, we will be putting it in ~/events
 
+3. Make a new BOT in the GroupMe Developers page. Edit the remindme.py script to your liking.
+
 3. Create a new 'events.csv' file in the same directory as the script.
 The 'events.csv' is formated like so:
 ```
@@ -62,11 +64,6 @@ Make sure events.csv exists and is formatted properly before launching.
 You can change the name of the ReminderBot by changing:
 ```python
 robot = groupy.Bot.create('RemindMe', chat)
-```
-
-You can change where the bot posts by changing:
-```python
-for g in groupy.Group.list().filter(name__contains='me'):
 ```
 
 You can change the time a reminder must be posted before the event by changing:

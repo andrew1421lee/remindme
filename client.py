@@ -1,7 +1,7 @@
 import socket
 import sys
 
-host = "localhost"
+host = "192.168.42.1"
 port = 12345
 
 f = open("events.csv","r")

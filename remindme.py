@@ -29,8 +29,9 @@ eventlist = []
 for g in groupy.Group.list().filter(name__contains='me'):
     chat = g
 
-#Creates a new bot robot with the name 'RemindMe' in the group 'chat'
-robot = groupy.Bot.create('RemindMe', chat)
+#uses the first bot in the list of bots to post
+robot = groupy.Bot.list().first
+#robot = groupy.Bot.create('RemindMe', chat)
 
 #reads the file 'events.csv' and splits it into an array of lines
 #lines = [line.rstrip('\n') for line in open('events.csv')]
