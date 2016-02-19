@@ -78,15 +78,7 @@ Make sure events.csv exists and is formatted properly before launching.
 
 ## Customization
 
-You can change the name of the ReminderBot by changing:
-```python
-robot = groupy.Bot.create('RemindMe', chat)
-```
-
-You can change the time a reminder must be posted before the event by changing:
-```python
-if ctime > 54 and ctime < 111:
-```
+Check the configuration file to customize things.
 
 ## Notes
 Inspired by all those times the secretary of [*club name redacted*] forgot to remind people about upcoming events.
