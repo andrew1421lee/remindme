@@ -28,6 +28,23 @@ The first line (columns) is:
 ```
 (make sure to make a new line after)
 
+4. Create a configuration file named 'config' in the working directory. Example config file:
+```xml
+[Server]
+file_name = events.csv
+minimum-time = 54
+maximum-time = 111
+group_name = me
+
+[Text]
+before12a = Good Morning! There are [
+before12b = ] event(s) in the following hour!
+after12a = Good Afternoon! There are [
+after12b = ] event(s) in the following hour!
+after6a = Good Evening! There are [
+after6b = ] event(s) in the following hour!
+```
+
 4. Create a cron job to run the script every full hour.
 ```bash
 crontab -e
