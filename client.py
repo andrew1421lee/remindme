@@ -1,8 +1,11 @@
 import socket
 import sys
+import configparser
+config = configparser.ConfigParser()
+config.read('config')
 
-host = "192.168.42.1"
-port = 12345
+host = config.get('Server','ip')#"128.226.247.65"
+port = int(config.get('Server','port'))
 
 f = open("events.csv","r")
 lines = f.readlines()
@@ -10,6 +13,7 @@ f.close
 
 f = open("events.csv","w")
 for line in lines:
+    #ignore formatting
     if line !="'Date','Time','Event'"+"\n":
         f.write(line)
 f.close

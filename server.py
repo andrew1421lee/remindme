@@ -6,7 +6,7 @@ config.read('config')
 
 s = socket.socket()
 host = ''#socket.gethostname()
-port = config.get('Server','port')
+port = int(config.get('Server','port'))
 s.bind((host,port))
 s.listen(10) # Acepta hasta 10 conexiones entrantes.
 
