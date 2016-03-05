@@ -1,8 +1,12 @@
 import socket
 import sys
+import configparser
+config = configparser.ConfigParser()
+config.read('config')
+
 s = socket.socket()
 host = ''#socket.gethostname()
-port = 12345
+port = config.get('Server','port')
 s.bind((host,port))
 s.listen(10) # Acepta hasta 10 conexiones entrantes.
 

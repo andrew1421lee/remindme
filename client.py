@@ -25,6 +25,6 @@ s.close()
 
 open("events.csv", 'w').close
 
-f = open("events.csv", "w")
-f.write("Date,Time,Event" + "\n")
-f.close
+#f = open("events.csv", "w")
+#f.write("Date,Time,Event" + "\n")
+#f.close
