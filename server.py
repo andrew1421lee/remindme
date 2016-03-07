@@ -23,11 +23,10 @@ while True:
     f.close()
     with open('buffer') as bh:
         with open('events.csv', 'a') as fh:
-            #print("Adding Event")
-            print(bh.read())
+            print("Adding Event")
             fh.write(bh.read())
             #fh.write("\n")
-    print("Connectoin Closed")
+    print("Connection Closed")
 
 sc.close()
 
