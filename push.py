@@ -1,8 +1,11 @@
 import socket
 import sys
+import configparser
+config = configparser.ConfigParser()
+config.read('config')
 
-host = "localhost"
-port = 12345
+host = config.get('Server','ip')
+port = int(config.get('Server','port'))
 
 date = input('Date << MM/DD:')
 time = input('Time << 24:00:')

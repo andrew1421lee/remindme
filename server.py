@@ -24,6 +24,7 @@ while True:
     with open('buffer') as bh:
         with open('events.csv', 'a') as fh:
             #print("Adding Event")
+            print(bh.read())
             fh.write(bh.read())
             #fh.write("\n")
     print("Connectoin Closed")
